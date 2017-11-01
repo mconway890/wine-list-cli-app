@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/wine_list'
+
+WineList::CLI.new.call
