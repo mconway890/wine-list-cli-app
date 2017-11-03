@@ -11,4 +11,4 @@ require "wine_list"
 # Pry.start
 
 require "irb"
-IRB.start(__FILE__)
+IRB.start

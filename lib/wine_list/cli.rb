@@ -9,10 +9,10 @@ class WineList::CLI
 
   def list_wines
     puts "Today's Top 100 Wines:"
-    puts <<-DOC.gsub /^\s*/, ''
-      1. Lewis Cabernet Sauvignon Napa Valley - 2013 - 95 - $90
-      2. Domaine Serene Chardonnay Dundee Hills Evenstad Reserve - 2014	- 95 - $55
-    DOC
+    @wines = WineList::Wine.today
+    @wines.each.with_index(1) do |wine, i|
+      puts "#{i}. #{wine.name} - #{wine.vintage} - #{wine.score} - #{wine.price}"
+    end
   end
 
   def menu
@@ -20,12 +20,11 @@ class WineList::CLI
     while input != "exit"
       puts "Enter the number of the wine you'd like more info on or type list to see the wines again or type exit:"
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "More info on deal 1..."
-      when "2"
-        puts "More info on deal 2..."
-      when "list"
+
+      if input.to_i > 0
+        the_wine = @wines[input.to_i - 1]
+        puts "#{the_wine.name} - #{the_wine.vintage} - #{the_wine.score} - #{the_wine.price}"
+      elsif input == "list"
         list_wines
       else
         puts "Woops! Type list or exit or enter a valid number."
