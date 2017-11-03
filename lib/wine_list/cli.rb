@@ -11,7 +11,7 @@ class WineList::CLI
     puts "Today's Top 100 Wines:"
     @wines = WineList::Wine.today
     @wines.each.with_index(1) do |wine, i|
-      puts "#{i}. #{wine.name} - #{wine.vintage} - #{wine.score} - #{wine.price}"
+      puts "#{i}. #{wine.name} - #{wine.rating} - #{wine.origin} - #{wine.price} - #{wine.rank}"
     end
   end
 
@@ -23,7 +23,7 @@ class WineList::CLI
 
       if input.to_i > 0
         the_wine = @wines[input.to_i - 1]
-        puts "#{the_wine.name} - #{the_wine.vintage} - #{the_wine.score} - #{the_wine.price}"
+        puts "#{the_wine.name} - #{the_wine.rating} - #{the_wine.origin} - #{the_wine.price} - #{the_wine.rank}"
       elsif input == "list"
         list_wines
       else
