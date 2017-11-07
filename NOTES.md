@@ -1,11 +1,9 @@
-- A command line interface for the year's top 100 recommended wines.
+- A command line interface for the day's top wines.
 
-user types wine_list
+- User types wine_list
 
--Welcomes user. Prompts user to enter number (1-10/11-20/21-30..)
+- Welcomes user. Displays list of todays top wines.
 
-user types number
+- Asks user for wine number they'd like more information on.
 
--Show a list of wines
-
-user selects wine # for more information
+- Displays wine name, rating, price and description

@@ -1,6 +1,6 @@
 # WineList
 
-Welcome to Wine List! Wine List will show you the year's top 100 wines along with their price, rating, origin and brief description.
+Welcome to Wine List! Wine List will show you today's top wines including their price, rating and description.
 
 ## Installation
 

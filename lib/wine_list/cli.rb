@@ -8,22 +8,29 @@ class WineList::CLI
   end
 
   def list_wines
-    puts "Today's Top 100 Wines:"
+    puts " ---------- Welcome to Wine List ----------"
+    puts ""
+    puts "Today's Top Wines:"
+    puts ""
     @wines = WineList::Wine.today
     @wines.each.with_index(1) do |wine, i|
-      puts "#{i}. #{wine.name} - #{wine.rating} - #{wine.origin} - #{wine.price} - #{wine.rank}"
+      puts "#{i}. #{wine.name} - #{wine.rating_price}"
     end
   end
 
   def menu
     input = nil
     while input != "exit"
-      puts "Enter the number of the wine you'd like more info on or type list to see the wines again or type exit:"
+      puts ""
+      puts "Enter the number of the wine you'd like more info on, type list to see the wines again or type exit:"
       input = gets.strip.downcase
 
       if input.to_i > 0
         the_wine = @wines[input.to_i - 1]
-        puts "#{the_wine.name} - #{the_wine.rating} - #{the_wine.origin} - #{the_wine.price} - #{the_wine.rank}"
+        puts ""
+        puts "#{the_wine.name} - #{the_wine.rating_price}"
+        puts ""
+        puts "#{the_wine.description}"
       elsif input == "list"
         list_wines
       else
