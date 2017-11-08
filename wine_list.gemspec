@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Michele Conway'"]
   spec.email         = ["'mconway890@gmail.com'"]
 
-  spec.summary       = %q{Top 100 Wine List}
-  spec.description   = %q{Wine List can show you today's top wines along with their year, score and price.}
+  spec.summary       = %q{Daily Wine Picks, Top Wines of the Year}
+  spec.description   = %q{Wine List can show you today's top wines as well as the top wines of the current year.}
   spec.homepage      = ""
   spec.license       = "MIT"
 

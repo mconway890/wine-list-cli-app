@@ -1,6 +1,6 @@
 # WineList
 
-Welcome to Wine List! Wine List will show you today's top wines including their price, rating and description.
+Welcome to Wine List! Wine List will show you today's top wines as well as the top wines of the current year.
 
 ## Installation
 
