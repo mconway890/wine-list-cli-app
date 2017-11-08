@@ -6,12 +6,24 @@ class WineList::Wine
     self.scrape_wines
   end
 
+  def self.year
+    self.scrape_year
+  end
+
   def self.scrape_wines
     wines = []
 
     wines << self.scrape_1
     wines << self.scrape_2
     wines << self.scrape_3
+
+    wines
+  end
+
+  def self.scrape_year
+    wines = []
+
+    wines << self.scrape
 
     wines
   end
@@ -44,6 +56,16 @@ class WineList::Wine
     wine.description = doc.search("div.daily-wine-items div.paragraph").first.text.strip
     wine.url = doc.search("div.daily-wine-items h5 a").first.attr("href")
     wine
+  end
+
+  def self.scrape
+
+    doc = Nokogiri::HTML(open("http://www.totalwine.com/top-20-wines-of-2017"))
+    wine = self.new
+    wine.name = doc.search("div.ranking section.text h4").first.text
+    wine.description = doc.search("div.ranking section.text p").first.text
+    wine
+
   end
 
 end
