@@ -24,8 +24,8 @@ class WineList::CLI
     puts "Top Wines of #{current_year}:"
     puts ""
     @wines = WineList::Wine.year
-    @wines.each do |wine|
-      puts "#{wine.name}"
+    @wines.each.with_index(1) do |wine, i|
+      puts "#{i}. #{wine.name}"
     end
   end
 

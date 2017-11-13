@@ -62,10 +62,11 @@ class WineList::Wine
 
     doc = Nokogiri::HTML(open("http://www.totalwine.com/top-20-wines-of-2017"))
     wine = self.new
-    wine.name = doc.search("div.ranking section.text h4").first.text
-    wine.description = doc.search("div.ranking section.text p").first.text
+    wine.name = doc.search("div.ranking section.text h4").text
+    wine.description = doc.search("div.ranking section.text p").text
     wine
 
   end
+
 
 end
