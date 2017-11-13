@@ -29,7 +29,9 @@ class WineList::Wine
   end
 
   def self.scrape_1
-    doc = Nokogiri::HTML(open("http://www.winespectator.com/dailypicks/category/catid/1"))
+    page_number = 0
+    page_number += 1
+    doc = Nokogiri::HTML(open("http://www.winespectator.com/dailypicks/category/catid/#{page_number}"))
     wine = self.new
     wine.name = doc.search("div.daily-wine-items h5 a").first.text
     wine.rating_price = doc.search("div.daily-wine-items h6").first.text
@@ -59,12 +61,14 @@ class WineList::Wine
   end
 
   def self.scrape
-
     doc = Nokogiri::HTML(open("http://www.totalwine.com/top-20-wines-of-2017"))
-    wine = self.new
-    wine.name = doc.search("div.ranking section.text h4").text
-    wine.description = doc.search("div.ranking section.text p").text
-    wine
+
+    doc.search("div.ranking section.text").collect do |section|
+      wine = self.new
+      wine.name = section.search("h4").text.split[1..-1].join(" ")
+      wine.description = section.search("p").text
+      wine
+    end
 
   end
 
