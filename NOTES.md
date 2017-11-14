@@ -1,4 +1,4 @@
-- A command line interface for the day's top wines.
+- A command line interface for the day's top wines & the years top wines.
 
 - User types wine_list
 
