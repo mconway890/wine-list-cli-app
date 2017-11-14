@@ -1,6 +1,6 @@
 # WineList
 
-Welcome to Wine List! Wine List will show you today's top wines as well as the top wines of the current year.
+Welcome to Wine List! Wine List will show you today's top three wines in the following price ranges: under $15, $15-$30, over $30. It will also display the top twenty wines of the current year as well as their description.
 
 ## Installation
 
