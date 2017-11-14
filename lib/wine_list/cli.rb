@@ -10,11 +10,11 @@ class WineList::CLI
   def list_todays_wines
     puts center("Welcome to Wine List")
     puts ""
-    puts "Today's Top Wines:"
+    puts "  Today's Top Wines:"
     puts ""
     @wines = WineList::Wine.today
     @wines.each.with_index(1) do |wine, i|
-      puts "#{i}. #{wine.name} - #{wine.rating_price}"
+      puts " #{i}. #{wine.name} - #{wine.rating_price}"
     end
   end
 
