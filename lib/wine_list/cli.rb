@@ -34,7 +34,7 @@ class WineList::CLI
     input = nil
     while input != "exit"
       puts ""
-      puts wrap("Enter the number of wine you'd like more info on, 'list' to see the wines again or 'exit'. For the top wines of #{current_year} enter 'year': ")
+      puts wrap("Enter the number of wine you'd like more info on, 'list' to see today's wines again or 'exit'. For the top wines of #{current_year} enter 'year': ")
       puts ""
       input = gets.strip.downcase
 
