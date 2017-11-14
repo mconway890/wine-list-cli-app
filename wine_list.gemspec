@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Daily Wine Picks, Top Wines of the Year}
   spec.description   = %q{Wine List can show you today's top wines as well as the top wines of the current year.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/mconway890/wine-list-cli-app"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
