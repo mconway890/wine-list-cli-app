@@ -34,9 +34,10 @@ class WineList::CLI
     input = nil
     while input != "exit"
       puts ""
-      print "Enter the number of wine you'd like more info on, 'list' to see the wines again or 'exit'. For the top wines of #{current_year} enter 'year': "
-      input = gets.strip.downcase
+      puts wrap("Enter the number of wine you'd like more info on, 'list' to see the wines again or 'exit'. For the top wines of #{current_year} enter 'year': ")
       puts ""
+      input = gets.strip.downcase
+
 
     if input.to_i > 0
       the_wine = @wines[input.to_i - 1]
@@ -44,7 +45,7 @@ class WineList::CLI
         puts "#{input.to_i}. #{the_wine.name} - #{the_wine.rating_price}"
         puts center("Description")
         puts ""
-        puts "#{the_wine.description}".split('—')
+        puts wrap("#{the_wine.description}").split('—')
       elsif input == "list"
         list_todays_wines
       elsif input == "year"
@@ -69,5 +70,9 @@ class WineList::CLI
     end
     string.prepend("\n")
   end
+
+  def wrap(s, width=70)
+	  s.gsub(/(.{1,#{width}})(\s+|\Z)/, "\\1\n")
+	end
 
 end
