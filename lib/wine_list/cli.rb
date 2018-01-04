@@ -39,7 +39,7 @@ class WineList::CLI
       input = gets.strip.downcase
 
 
-    if input.to_i > 0
+    if input.to_i > 0 
       the_wine = @wines[input.to_i - 1]
         puts ""
         puts "#{input.to_i}. #{the_wine.name} - #{the_wine.rating_price}"
@@ -50,7 +50,7 @@ class WineList::CLI
         list_todays_wines
       elsif input == "year"
         list_years_wines
-      elsif input != "exit"
+      elsif input != "exit" 
         puts "Your entry is invalid."
       end
     end
